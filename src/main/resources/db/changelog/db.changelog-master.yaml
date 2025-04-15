@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: changes/2025-03-27_init_schema.sql
+
+  - changeSet:
+      id: db
+      author: master
+      context: "!test"
+      runAlways: true
+      runOnChange: true
+      runOrder: last
+      changes:
+        - sqlFile:
+            path: changes/2025-03-27_init_schema.sql
+            relativeToChangelogFile: true
